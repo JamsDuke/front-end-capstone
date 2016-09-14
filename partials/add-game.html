@@ -1,0 +1,32 @@
+<h1>Add a Game</h1>
+  <form>
+    <div class="form-group">
+      <label>Game Title</label>
+      <input type="text" class="form-control" placeholder="Game Title" ng-model="" />
+    </div>
+    <div class="form-group">
+      <label>Game Genre</label>
+      <select name="genreSelector" id="">
+        <option value="FPS" name="FPS"></option>
+        <option value="RTS" name="RTS"></option>
+        <option value="RPG" name="RPG"></option>
+        <option value="MOBA" name="MOBA"></option>
+        <option value="MMO" name="MMO"></option>
+        <option value="Beat'em up" name="Beat'em up"></option>
+        <option value="Sidescroller" name="Sidescroller"></option>
+        <option value="Top-Down Shooter" name="Top-Down Shooter"></option>
+        <option value="Third Person Shooter" name="Third Person Shooter"></option>
+        <option value="Other" name="Other"></option>
+      </select ng-model="">
+    </div>
+    <div class="form-group">
+      <label>Co-op Player Count</label>
+      <select name="coopCountSelector" id="">
+        <option value="2" name="">2</option>
+        <option value="3" name="">3</option>
+        <option value="4" name="">4</option>
+        <option value="5" name="">5</option>
+      </select ng-model="">
+    </div>
+    <button class="btn btn-default" ng-click="addNewGame()">Add to List</button>
+  </form>

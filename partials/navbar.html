@@ -1,0 +1,15 @@
+<h1>Bro Night</h1>
+<nav class="" ng-controller="">
+  <div class="">
+    <div>
+      <ul class="">
+        <li ng-show="!$parent.isLoggedIn"><a ng-href="#/login">Login</a></li>
+        <li ng-show="$parent.isLoggedIn"><a ng-href="#">Game List</a></li>
+        <li ng-show="$parent.isLoggedIn"><a ng-href="#">Add Games</a></li>
+        <li ng-show="$parent.isLoggedIn"><a ng-href="#">Create Party</a></li>
+        <li ng-show="$parent.isLoggedIn"><a ng-href="#">Party List</a></li>
+        <li ng-show="$parent.isLoggedIn"><button ng-click="logout()">Logout</button></li>
+      </ul>
+    </div>
+  </div>
+</nav>
