@@ -25,7 +25,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory){
     AuthFactory.loginUser($scope.account)
     .then( (data) => {
       if (data) {
-        $window.location.href = "#/home";
+        $window.location.href = "#/games/list";
       } else {
         $window.location.href = "#/games/list";
       }
