@@ -2,7 +2,7 @@
   <form>
     <div class="form-group">
       <label>Game Title</label>
-      <input type="text" class="form-control" placeholder="Game Title" ng-model="" />
+      <input type="text" class="form-control" placeholder="Game Title" ng-model="game.title" />
     </div>
     <div class="form-group">
       <label>Game Genre</label>
@@ -17,7 +17,7 @@
         <option value="Top-Down Shooter" name="Top-Down Shooter"></option>
         <option value="Third Person Shooter" name="Third Person Shooter"></option>
         <option value="Other" name="Other"></option>
-      </select ng-model="">
+      </select ng-model="game.genre">
     </div>
     <div class="form-group">
       <label>Co-op Player Count</label>
@@ -26,7 +26,7 @@
         <option value="3" name="">3</option>
         <option value="4" name="">4</option>
         <option value="5" name="">5</option>
-      </select ng-model="">
+      </select ng-model="game.coopCount">
     </div>
     <button class="btn btn-default" ng-click="addNewGame()">Add to List</button>
   </form>

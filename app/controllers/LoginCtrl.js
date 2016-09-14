@@ -3,14 +3,14 @@
 app.controller("LoginCtrl", function($scope, $window, AuthFactory){
   $scope.account = {
     email: "",
-    username: "",
+    // username: "",
     password: ""
   };
   $scope.register = () => {
     console.log("you clicked register");
     AuthFactory.createUser({
       email: $scope.account.email,
-      username: $scope.account.username,
+      // username: $scope.account.username,
       password: $scope.account.password
     })
     .then((userData) => {
@@ -27,7 +27,7 @@ app.controller("LoginCtrl", function($scope, $window, AuthFactory){
       if (data) {
         $window.location.href = "#/home";
       } else {
-        $window.location.href = "#/login";
+        $window.location.href = "#/games/list";
       }
       console.log("data from login", data);
     }, (error) => {
