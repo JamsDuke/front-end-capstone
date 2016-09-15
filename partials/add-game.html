@@ -6,7 +6,7 @@
     </div>
     <div class="form-group">
       <label>Game Genre</label>
-      <select name="genreSelector" id="genreSelector">
+      <select name="genre" id="genre" ng-model="game.genre">
         <option value="FPS" name="FPS">FPS</option>
         <option value="RTS" name="RTS">RTS</option>
         <option value="RPG" name="RPG">RPG</option>
@@ -17,16 +17,16 @@
         <option value="Top-Down Shooter" name="Top-Down Shooter">Top-Down Shooter</option>
         <option value="Third Person Shooter" name="Third Person Shooter">Third Person Shooter</option>
         <option value="Other" name="Other">Other</option>
-      </select ng-model="game.genre">
+      </select>
     </div>
     <div class="form-group">
       <label>Co-op Player Count</label>
-      <select name="coopCountSelector" id="">
+      <select name="coopCount" id="coopCount" ng-model="game.coopCount">
         <option value="2" name="">2</option>
         <option value="3" name="">3</option>
         <option value="4" name="">4</option>
         <option value="5" name="">5</option>
-      </select ng-model="game.coopCount">
+      </select>
     </div>
     <button class="btn btn-default" ng-click="addNewGame()">Add to List</button>
   </form>

@@ -29,7 +29,7 @@ app.config(function($routeProvider) {
     }).
     when('/games/new', {
       templateUrl: 'partials/add-game.html',
-      controller: '',
+      controller: 'GameNewCtrl',
       resolve: {isAuth}
     }).
     when("/party/new", {
