@@ -3,23 +3,27 @@
 app.controller("LoginCtrl", function($scope, $window, AuthFactory){
   $scope.account = {
     email: "",
-    // username: "",
+    username: "",
     password: ""
   };
-  $scope.register = () => {
+  $scope.register = (email, password) => {
     console.log("you clicked register");
-    AuthFactory.createUser({
+    AuthFactory.registerUser({
       email: $scope.account.email,
-      // username: $scope.account.username,
       password: $scope.account.password
     })
     .then((userData) => {
+      AuthFactory.saveUserInfo({
+        username: $scope.account.username,
+        uid: userData.uid
+      });
       console.log("newUser", userData);
       $scope.login();
     }, (error) => {
       console.log(`Error creating user: ${error}`);
     });
   };
+
   $scope.login = () => {
     console.log("you clicked login");
     AuthFactory.loginUser($scope.account)

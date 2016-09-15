@@ -1,5 +1,12 @@
 <h1>Make a Party</h1>
+
+  <div>  <!-- will need a ng-repeat for users added to the group -->
+    <!-- Users added from user list go here -->
+  </div>
+
   <div class="">  <!-- Need an ng-repeat here for users in database -->
-    <div class="">{{user.email}}</div>
+    <div class="">{{data.email}}</div>
     <div class=""><button class="btn" ng-click="addPlayerToParty()">Add to Party</button></div>
   </div>
+
+  <!-- User information is in data from LoginCtrl and TopCtrl -->

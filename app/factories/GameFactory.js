@@ -1,6 +1,7 @@
 "use strict";
 
 app.factory("GameStorage", ($q, $http, FirebaseURL) => {
+  // Populate a list of games that the user has uploaded to the database
   let getGameList = (user) => {
     let games = [];
     //This is the Angular way of doing promises
@@ -23,7 +24,7 @@ app.factory("GameStorage", ($q, $http, FirebaseURL) => {
       });
     });
   };
-
+// Display single game for editing (not yet implemented)
   let getSingleGame = (gameId) => {
     return $q( (resolve, reject) => {
       $http.get(`${FirebaseURL}games/${gameId}.json`)
@@ -35,7 +36,7 @@ app.factory("GameStorage", ($q, $http, FirebaseURL) => {
       });
     });
   };
-
+// Edit details of a game in the database (not yet implemented)
   let updateGame = (gameId, editedGame) => {
     return $q( (resolve, reject) => {
       $http.patch(`${FirebaseURL}games/${gameId}.json`,
@@ -48,7 +49,7 @@ app.factory("GameStorage", ($q, $http, FirebaseURL) => {
       });
     });
   };
-
+// Upload a game to the database
   let postNewGame = (newGame) => {
     return $q( (resolve, reject) => {
       $http.post(`${FirebaseURL}/games.json`,
@@ -61,6 +62,7 @@ app.factory("GameStorage", ($q, $http, FirebaseURL) => {
         });
     });
   };
+// Delete a game from the database
 let deleteGame = (gameId) => {
   return $q( (resolve, reject) => {
     $http.delete(`${FirebaseURL}/games/${gameId}.json`)

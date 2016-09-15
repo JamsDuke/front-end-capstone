@@ -2,7 +2,7 @@
 
 var app = angular.module("BroNight", ["ngRoute"])
 .constant("FirebaseURL", "https://front-end-capstone-eb4f2.firebaseio.com/");
-
+// Prevents access to interior of app unless logged in
 let isAuth = (AuthFactory) => new Promise((resolve, reject) =>{
   if(AuthFactory.isAuthenticated()) {
     resolve();
@@ -10,7 +10,7 @@ let isAuth = (AuthFactory) => new Promise((resolve, reject) =>{
     reject();
   }
 });
-
+// Partials and their accompanying controllers
 app.config(function($routeProvider) {
   $routeProvider.
   when('/', {
@@ -24,7 +24,7 @@ app.config(function($routeProvider) {
   }).
     when('/games/list', {
       templateUrl: 'partials/game-list.html',
-      controller: '',
+      controller: 'GameListCtrl',
       resolve: {isAuth}
     }).
     when('/games/new', {
@@ -34,7 +34,7 @@ app.config(function($routeProvider) {
     }).
     when("/party/new", {
       templateUrl: 'partials/make-party.html',
-      controller: '',
+      controller: 'UserListCtrl',
       resolve: {isAuth}
     }).
     when("/party/current", {
@@ -45,6 +45,7 @@ app.config(function($routeProvider) {
     otherwise('/');
 });
 
+// Enables use of Firebase
 app.run(($location, FBCreds) => {
   let creds = FBCreds;
   let authConfig = {
