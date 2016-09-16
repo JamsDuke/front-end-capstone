@@ -13,7 +13,6 @@ app.factory("UserStorage", ($q, $http, FirebaseURL) => {
           Object.keys(userObject).forEach((key)=>{
             userObject[key].id = key;
             users.push(userObject[key]);
-            // console.log('TESTING THINGS', users.id);
           });
           resolve(users);
         } else {
@@ -25,15 +24,22 @@ app.factory("UserStorage", ($q, $http, FirebaseURL) => {
       });
     });
   };
+  // Post newPartyMember to firebase in the "party" branch
+  let postUserToParty = function(newPartyMember) {
+    console.log("newPartyMember", newPartyMember);
+    return $q( (resolve, reject) => {
+      $http.post(`${FirebaseURL}party.json`,
+        angular.toJson(newPartyMember))
+      // use angular.toJason instead of JSON.stringify if dealing with data that has already been processed by
+      // angular.  Firebase doesnt like data that has been touched by angular.
+        .success( (objFromFirebase) => {
+          resolve(objFromFirebase);
+        })
+        .error( (error) => {
+          reject(error);
+        });
+    });
+  };
 
-// Delete a game from the database
-// let deleteGame = (gameId) => {
-//   return $q( (resolve, reject) => {
-//     $http.delete(`${FirebaseURL}/games/${gameId}.json`)
-//     .success( (objFromFirebase) => {
-//       resolve(objFromFirebase);
-//     });
-//   });
-// };
-  return {getUserList};  // , deleteGame
+  return {getUserList, postUserToParty};
 });

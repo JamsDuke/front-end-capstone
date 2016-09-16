@@ -3,10 +3,8 @@
     <div class="">
       <div class="">
 <!-- Stretch goal here. Be able to click on title for game description/notes -->
-        <div class="">{{game.title}}</div>  <!-- <a ng-href="#">{{game.title}}</a> -->
-        <div class="">Genre: {{game.genre}}</div>
-        <div class="">{{game.coopCount}} Player Co-op</div>
-        <div class=""><button class="btn" ng-click="gameDelete(game.id)">Delete</button></div>
+        <div class="">{{game.title}} | Genre: {{game.genre}} | {{game.coopCount}} Player Co-op</div>
+        <div><button class="btn" ng-click="gameDelete(game.id)">Delete</button></div>
         <!-- <div class=""><button class="btn" ng-click="gameEdit(game.id)">Edit</button></div> -->
       </div>
     </div>

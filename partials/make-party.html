@@ -1,12 +1,6 @@
 <h1>Make a Party</h1>
-
-  <div>  <!-- will need a ng-repeat for users added to the group -->
-    <!-- Users added from user list go here -->
-  </div>
-
-  <div class="" ng-repeat="user in users">  <!-- Need an ng-repeat here for users in database -->
-    <div class="">{{user.username}}  <button class="btn" ng-click="addPlayerToParty()">Add to Party</button></div>
+  <div class="" ng-repeat="user in users">
+    <div class="">{{user.username}}  <button class="btn" ng-click="addUserToParty(user)">Add to Party</button></div>
+    <!-- I would like to have a toggle here for the button "in party/not in party" -->
     <div class=""></div>
   </div>
-
-  <!-- User information is in data from LoginCtrl and TopCtrl -->
