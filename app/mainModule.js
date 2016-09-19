@@ -22,6 +22,10 @@ app.config(function($routeProvider) {
     templateUrl: 'partials/login.html',
     controller: 'LoginCtrl'
   }).
+  when('/register', {
+    templateUrl: 'partials/register.html',
+    controller: 'LoginCtrl'
+  }).
     when('/games/list', {
       templateUrl: 'partials/game-list.html',
       controller: 'GameListCtrl',
