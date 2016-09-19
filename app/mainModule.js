@@ -38,7 +38,7 @@ app.config(function($routeProvider) {
     }).
     when("/party/new", {
       templateUrl: 'partials/make-party.html',
-      controller: 'UserListCtrl',
+      controller: 'PartyNewCtrl',
       resolve: {isAuth}
     }).
     when("/party/current", {

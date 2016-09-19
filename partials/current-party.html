@@ -1,11 +1,9 @@
 <h1>Current Party</h1>
-  <div> <!-- Party Members here | ng repeat="user in party?"-->
-    <div class="">
-      <div class="">{{user.username}}</div>
-      <div class=""><button class="btn" >Remove From Party</button></div> <!-- ng-click="" -->
-    </div>
+  <div ng-repeat="user in party"> <!-- Party Members here | ng repeat="user in party?"-->
+    <div class="">{{user.username}}</div>
+    <div class=""><button class="btn" >Remove From Party</button></div> <!-- ng-click="" -->
   </div>
-    <div >  <!-- ng-repeat="" game in party? -->
+    <div>  <!-- ng-repeat="" game in party? -->
       <div class="">
         <div class="">
     <!-- Stretch goal here. Be able to click on title for game description/notes -->

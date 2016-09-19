@@ -22,13 +22,13 @@ app.controller("UserListCtrl", function($scope, UserStorage) {
 
       }
     }
-      console.log(usersArray);
-      $scope.addUserToParty = function(user) {
+    console.log(usersArray);
+    $scope.addUserToParty = function(user) {
       UserStorage.postUserToParty(user);
     };
   });
 
-// WIP: Need Add player to group function and remove player from group function
+// WIP: Need remove player from group function
 // Toggle button to hide added party members instead of deleting them from database
 // When clicked, add player to [partyArray] via post.  Its okay to create/delete these
 // values from database because the party list is supposed to be dynamic.

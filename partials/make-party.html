@@ -1,6 +1,12 @@
-<h1>Make a Party</h1>
-  <div class="" ng-repeat="user in users">
-    <div class="">{{user.username}}  <button class="btn" ng-click="addUserToParty(user)">Add to Party</button></div>
-    <!-- I would like to have a toggle here for the button "in party/not in party" -->
-    <div class=""></div>
+<h1>Create a Party</h1>
+<form>
+  <div class="form-group">
+    <label><h5>Party Name:</h5></label>
+    <input type="text" class="form-control" placeholder="" ng-model="newParty.title" />
   </div>
+  <div class="form-group">
+    <label><h5>Party Description</h5></label>
+    <input type="text" class="form-control" ng-model="newParty.description" />
+  </div>
+  <button class="" ng-click="addNewParty()">Add</button>
+</form>

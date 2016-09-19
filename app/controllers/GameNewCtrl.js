@@ -5,6 +5,7 @@ app.controller("GameNewCtrl", function($scope, GameStorage, $location) {
     title: "",
     genre: null,
     coopCount: null,
+    description: "",
     uid: $scope.$parent.getUser()
   };
 
