@@ -12,7 +12,7 @@ app.controller("PartyNewCtrl", function($scope, $window, PartyStorage) {
   $scope.addNewParty = function() {
     PartyStorage.postNewParty ($scope.newParty)
     .then(function() {
-      $window.location.href = "#/party/current"; // rerouting back to list view after promise is returned
+      $window.location.href = "#/party/list"; // rerouting back to list view after promise is returned
     });
   };
 });

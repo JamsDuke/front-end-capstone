@@ -1,12 +1,15 @@
 "use strict";
-// Get parties to populate a users list of parties
+
 app.factory("PartyStorage", ($q, $http, FirebaseURL) => {
+  // Populate a list of parties that the user has uploaded to the database
   let getParties = (user) => {
     let parties = [];
+    //This is the Angular way of doing promises
     return $q((resolve, reject)=>{
       $http.get(`${FirebaseURL}/parties.json?orderBy="uid"&equalTo="${user}"`)
-      .success((partyObject) => {
-        if (partyObject !== null) {
+      //Angular does the parsing of the object for you, just like AJAX or getJSON
+      .success((partyObject)=>{
+        if (partyObject !== null){
           Object.keys(partyObject).forEach((key)=>{
             partyObject[key].id = key;
             parties.push(partyObject[key]);

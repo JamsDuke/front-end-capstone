@@ -6,7 +6,7 @@ app.factory("UserStorage", ($q, $http, FirebaseURL) => {
     let users = [];
     //This is the Angular way of doing promises
     return $q((resolve, reject)=>{
-      $http.get(`${FirebaseURL}/profiles.json`)  //?orderBy="uid"&equalTo="${user}"
+      $http.get(`${FirebaseURL}/profiles.json`)
       //Angular does the parsing of the object for you, just like AJAX or getJSON
       .success((userObject)=>{
         if (userObject !== null){

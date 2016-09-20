@@ -1,0 +1,11 @@
+<h1>Party List</h1>
+  <div ng-repeat="party in parties">
+    <div class="">
+      <div class="">
+        <div class="">{{party.title}}</div>
+        <div class="">{{party.description}}</div>
+        <div><button class="btn" ng-click="partyDelete(game.id)">Delete</button></div>
+        <!-- <div class=""><button class="btn" ng-click="gameEdit(game.id)">Edit</button></div> -->
+      </div>
+    </div>
+  </div>
