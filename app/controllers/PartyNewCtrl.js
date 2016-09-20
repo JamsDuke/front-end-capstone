@@ -6,6 +6,7 @@ app.controller("PartyNewCtrl", function($scope, $window, PartyStorage) {
   $scope.newParty = {
     title: "",
     description: "",
+    members: [],
     uid: $scope.$parent.getUser()
   };
 
@@ -14,6 +15,9 @@ app.controller("PartyNewCtrl", function($scope, $window, PartyStorage) {
     .then(function() {
       $window.location.href = "#/party/list"; // rerouting back to list view after promise is returned
     });
+  };
+  $scope.addUserToParty = function(user) {
+    $scope.newParty.members.push(user.uid);
   };
 });
 

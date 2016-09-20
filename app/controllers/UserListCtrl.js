@@ -22,10 +22,10 @@ app.controller("UserListCtrl", function($scope, UserStorage) {
 
       }
     }
-    console.log(usersArray);
-    $scope.addUserToParty = function(user) {
-      UserStorage.postUserToParty(user);
-    };
+    // console.log(usersArray);
+    // $scope.addUserToParty = function(user) {
+    //   UserStorage.postUserToParty(user);
+    // };
   });
 
 // WIP: Need remove player from group function

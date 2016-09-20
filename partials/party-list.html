@@ -1,4 +1,4 @@
-<h1>Party List</h1><!-- 'View Boards' Header -->
+<h1>Party List</h1><!-- 'Party List' Header -->
   <div ng-repeat="party in parties">
     <div class=""><!-- party card wrapper -->
       <div class=""><!-- party card -->
@@ -7,12 +7,12 @@
           <div>{{party.title}}</div>
           <div class="">{{party.description}}</div>
           <div class="">
-            <button class="btn btn-danger" ng-click="boardDelete(board.id)">Delete</button>
-            <!-- <button class="btn btn-danger" ng-click="boardEdit(board.id)"><i class="">Edit</i></button> -->
+            <button class="btn btn-danger" ng-click="partyDelete(party.id)">Delete</button>
+            <!-- <button class="btn btn-danger" ng-click="partyEdit(party.id)"><i class="">Edit</i></button> -->
           </div>
         </div><!-- end card bottom wrapper -->
-      </div><!-- end board card -->
-    </div><!-- end board card wrapper -->
+      </div><!-- end party card -->
+    </div><!-- end party card wrapper -->
   </div>
 </div><!-- end row wrapper -->
 

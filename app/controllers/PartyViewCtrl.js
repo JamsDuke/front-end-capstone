@@ -1,14 +1,15 @@
 "use strict";
-
 app.controller("PartyViewCtrl", function($scope, UserStorage) {
-  //array holds users specific to this party
+  //array holds pins specific to this board
   $scope.partyMembers = [];
-  //gets all users associated with the current party
+  //gets all pins associated with the current user
   UserStorage.getPartyMembers($scope.$parent.getUser())
-  .then((PartyMembersArray) => {
-    //puts all users associated with current party into an array
-    $.each(PartyMembersArray, function (index, value) {
-      if (value.partyid === $scope.$parent.currentPartyId) {
+  .then((UserListArray) => {
+    //clear arrays
+    $scope.partyMembers = [];
+    //puts all pins associated with current user into an array
+    $.each(UserListArray, function (index, value) {
+      if (value.partyId === $scope.$parent.currentPartyId) {
         $scope.partyMembers.push(value);
       }
     });
@@ -17,16 +18,18 @@ app.controller("PartyViewCtrl", function($scope, UserStorage) {
   $scope.pinDelete = function (pinid) {
     UserStorage.deletePin(pinid)
     .then( function () {
-      UserStorage.getUserPins($scope.$parent.getUser())
-      .then((PartyMembersArray) => {
+      UserStorage.getPartyMembers($scope.$parent.getUser())
+      .then((UserListArray) => {
         //clear arrays
         $scope.partyMembers = [];
+
         //puts all pins associated with current user into an array
-        $.each(PartyMembersArray, function (index, value) {
-          if (value.boardid === $scope.$parent.currentPartyId) {
+        $.each(UserListArray, function (index, value) {
+          if (value.partyId === $scope.$parent.currentPartyId) {
             $scope.partyMembers.push(value);
           }
         });
+        //sorts the array of user pins to three arrays, one for each column
       });
     });
   };
