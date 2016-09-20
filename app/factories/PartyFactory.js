@@ -49,7 +49,7 @@ app.factory("PartyStorage", ($q, $http, FirebaseURL) => {
       });
     });
   };
-// Add new party to party
+// Add new party to parties
   let postNewParty = (newParty) => {
     return $q( (resolve, reject) => {
       $http.post(`${FirebaseURL}/parties.json`,
@@ -62,7 +62,7 @@ app.factory("PartyStorage", ($q, $http, FirebaseURL) => {
         });
     });
   };
-// Delete party from party
+// Delete party from parties
   let deleteParty = (partyId) => {
     return $q( (resolve, reject) => {
       $http.delete(`${FirebaseURL}/parties/${partyId}.json`)

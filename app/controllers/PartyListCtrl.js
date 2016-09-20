@@ -16,14 +16,14 @@ app.controller("PartyListCtrl", function($scope, $window, $routeParams, PartySto
     $window.location.href = "#/parties/new";
   };
 
-  $scope.partyEdit = function (partyId) {
+  $scope.partyEdit = function (partyid) {
 
-    $window.location.href = `#/parties/edit/${partyId}`;
+    $window.location.href = `#/parties/edit/${partyid}`;
   };
   //delete a party using ng-click and the party id being passed in via the
   //data attr in the partial
-  $scope.partyDelete = function (partyId) {
-    PartyStorage.deleteParty(partyId)
+  $scope.partyDelete = function (partyid) {
+    PartyStorage.deleteParty(partyid)
     .then( () => {
       //reload page
       PartyStorage.getParties(user)
@@ -35,10 +35,10 @@ app.controller("PartyListCtrl", function($scope, $window, $routeParams, PartySto
   };
 //--there probably is a better way to have done this--
   //navigate to the 'single-party' partial using the party's id
-  $scope.goToParty = function (partyId, partyTitle) {
-    $scope.$parent.currentPartyId = partyId;
-    $scope.$parent.currentPartyTitle = partyTitle;
-    $window.location.href = `#/parties/${partyId}`;
+  $scope.goToParty = function (partyid, partytitle) {
+    $scope.$parent.currentPartyId = partyid;
+    $scope.$parent.currentPartyTitle = partytitle;
+    $window.location.href = `#/party/${partyid}`;
   };
 });
 
@@ -52,8 +52,8 @@ app.controller("PartyListCtrl", function($scope, $window, $routeParams, PartySto
 //     $scope.parties = partiesArray;
 //   });
 
-//   $scope.partyDelete = (partyId) => {
-//     PartyStorage.deleteParty(partyId)
+//   $scope.partyDelete = (partyid) => {
+//     PartyStorage.deleteParty(partyid)
 //     .then( (response) => {
 //       PartyStorage.getPartyList(user)
 //       .then( (partiesArray) => {

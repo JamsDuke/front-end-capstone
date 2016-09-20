@@ -9,15 +9,21 @@ app.controller("PartyNewCtrl", function($scope, $window, PartyStorage) {
     members: [],
     uid: $scope.$parent.getUser()
   };
-
+  // Adds user to members array
+  $scope.addUserToParty = function(user) {
+    $scope.newParty.members.push(user.username, user.uid);
+  };
+  // Removes a user from the members array
+  // Not implemented, should be replaced with checkbox option.
+  // $scope.removeUserFromParty = function(user) {
+  //   $scope.newParty.members.push(user.uid);
+  // };
+  // Creates a new party
   $scope.addNewParty = function() {
     PartyStorage.postNewParty ($scope.newParty)
     .then(function() {
-      $window.location.href = "#/party/list"; // rerouting back to list view after promise is returned
+      $window.location.href = "#/party/list";
     });
-  };
-  $scope.addUserToParty = function(user) {
-    $scope.newParty.members.push(user.uid);
   };
 });
 

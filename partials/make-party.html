@@ -11,8 +11,8 @@
   <div ng-controller="UserListCtrl">
     <h2>Available Users</h2>
       <div class="" ng-repeat="user in users">
-        <div class="">{{user.username}}  <button class="btn" ng-click="$parent.addUserToParty(user)">Add to Party</button><button class="btn" ng-click="removeUserFromParty(user)">Remove From Party</button></div>
-        <!-- I would like to have a toggle here for the button "in party/not in party" -->
+        <div class="">{{user.username}}  <button class="btn" ng-click="$parent.addUserToParty(user)">Add to Party</button><!-- <button class="btn" ng-click="$parent.removeUserFromParty(user)">Remove From Party</button></div> -->
+        <!-- I would like to have a checkbox here for the button "in party/not in party" -->
         <div class=""></div>
       </div>
   </div>

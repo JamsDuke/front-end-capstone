@@ -2,6 +2,7 @@
 
 app.controller("TopCtrl", function($scope, $location, $window, AuthFactory) {
   $scope.isLoggedIn = false;
+  $scope.currentPartyTitle = "";
   let currentUser = null;
 
   firebase.auth().onAuthStateChanged(function(user) {
