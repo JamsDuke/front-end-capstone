@@ -1,11 +1,31 @@
-<h1>Party List</h1>
+<h1>Party List</h1><!-- 'View Boards' Header -->
+  <div ng-repeat="party in parties">
+    <div class=""><!-- party card wrapper -->
+      <div class=""><!-- party card -->
+        <button class="" ng-click="goToParty(party.id, party.title)" data-partyid="{{party.id}}">View Party</button>
+        <div class="">
+          <div>{{party.title}}</div>
+          <div class="">{{party.description}}</div>
+          <div class="">
+            <button class="btn btn-danger" ng-click="boardDelete(board.id)">Delete</button>
+            <!-- <button class="btn btn-danger" ng-click="boardEdit(board.id)"><i class="">Edit</i></button> -->
+          </div>
+        </div><!-- end card bottom wrapper -->
+      </div><!-- end board card -->
+    </div><!-- end board card wrapper -->
+  </div>
+</div><!-- end row wrapper -->
+
+
+
+<!-- <h1>Party List</h1>
   <div ng-repeat="party in parties">
     <div class="">
       <div class="">
         <div class="">{{party.title}}</div>
         <div class="">{{party.description}}</div>
-        <div><button class="btn" ng-click="partyDelete(game.id)">Delete</button></div>
-        <!-- <div class=""><button class="btn" ng-click="gameEdit(game.id)">Edit</button></div> -->
+        <div><button class="btn" ng-click="partyDelete(party.id)">Delete</button></div>
+        <div><button class="btn" ng-click="goToParty(party.id)">View Party</button></div>
       </div>
     </div>
-  </div>
+  </div> -->
