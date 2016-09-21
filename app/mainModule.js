@@ -46,7 +46,7 @@ app.config(function($routeProvider) {
       controller: 'PartyListCtrl',
       resolve: {isAuth}
     }).
-    when("/party/:boardid", {
+    when("/party/:partyid", {
       templateUrl: 'partials/single-party.html',
       controller: 'PartyViewCtrl',
       resolve: {isAuth}

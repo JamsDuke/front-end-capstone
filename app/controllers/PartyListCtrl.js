@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("PartyListCtrl", function($scope, $window, $routeParams, PartyStorage) {
+app.controller("PartyListCtrl", function($scope, $window, PartyStorage) {
   let user = $scope.$parent.getUser();
 
   //retrieve the 'parties' with uid property equal to user
@@ -37,7 +37,9 @@ app.controller("PartyListCtrl", function($scope, $window, $routeParams, PartySto
   //navigate to the 'single-party' partial using the party's id
   $scope.goToParty = function (partyid, partytitle) {
     $scope.$parent.currentPartyId = partyid;
+    // console.log("partyid", partyid);
     $scope.$parent.currentPartyTitle = partytitle;
+    // console.log("partytitle", partytitle);
     $window.location.href = `#/party/${partyid}`;
   };
 });

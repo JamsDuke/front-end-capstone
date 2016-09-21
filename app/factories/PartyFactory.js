@@ -24,8 +24,32 @@ app.factory("PartyStorage", ($q, $http, FirebaseURL) => {
       });
     });
   };
+  // The goal here is to get ALL the games in the DB to match with UID of users in party
+  let getPartyGameList = () => {
+    let games = [];
+    //This is the Angular way of doing promises
+    return $q((resolve, reject)=>{
+      $http.get(`${FirebaseURL}/games.json`)
+      //Angular does the parsing of the object for you, just like AJAX or getJSON
+      .success((gameObject)=>{
+        if (gameObject !== null){
+          Object.keys(gameObject).forEach((key)=>{
+            gameObject[key].id = key;
+            games.push(gameObject[key]);
+          });
+          resolve(games);
+        } else {
+          resolve(games);
+        }
+      })
+      .error((error)=>{
+        reject(error);
+      });
+    });
+  };
 // Get a single party
   let getSingleParty = (partyId) => {
+    console.log("partyId", partyId);
     return $q( (resolve, reject) => {
       $http.get(`${FirebaseURL}parties/${partyId}.json`)
       .success( (partyObject) => {
@@ -71,7 +95,7 @@ app.factory("PartyStorage", ($q, $http, FirebaseURL) => {
       });
     });
   };
-  return {getParties, getSingleParty, editParty, postNewParty, deleteParty};
+  return {getParties, getSingleParty, editParty, postNewParty, deleteParty, getPartyGameList};
 });
 
 // "use strict";
