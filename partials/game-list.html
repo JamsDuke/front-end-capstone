@@ -1,11 +1,13 @@
 <h1>Game List</h1>
-  <div ng-repeat="game in games">  <!-- ng-repeat="game in games" -->
+  <div ng-repeat="game in games">
     <div class="">
       <div class="">
 <!-- Stretch goal here. Be able to click on title for game description/notes -->
         <div class="">{{game.title}} | Genre: {{game.genre}} | {{game.coopCount}} Player Co-op</div>
-        <div><button class="btn" ng-click="gameDelete(game.id)">Delete</button></div>
-        <!-- <div class=""><button class="btn" ng-click="gameEdit(game.id)">Edit</button></div> -->
+        <div><button class="btn" ng-click="gameDelete(game.id)">Delete</button>
+        <!-- <button class="btn" ng-click="gameEdit(game.id)">Edit</button> -->
+        <button class="btn"><a ng-href="#/games/{{game.id}}/edit">Edit</a></button>
+        </div>
       </div>
     </div>
   </div>

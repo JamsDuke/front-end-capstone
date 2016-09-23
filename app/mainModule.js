@@ -36,6 +36,11 @@ app.config(function($routeProvider) {
       controller: 'GameNewCtrl',
       resolve: {isAuth}
     }).
+    when("/games/:gameId/edit", {
+      templateUrl: "partials/add-game.html",
+      controller: "GameEditCtrl",
+      resolve: {isAuth}
+    }).
     when("/party/new", {
       templateUrl: 'partials/make-party.html',
       controller: 'PartyNewCtrl',

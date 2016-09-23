@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Seeing Double</title>
+  <script type="text/javascript">
+    //you've got the array with all the common games
+    var fullArray = ["apples", "oranges", "peaches", "apples", "oranges", "apples", "cookies"];
+    var usersArray = ["bob", "greg", "kc"]
+
+    var finalArray = [];
+    for (var i = 0; i < fullArray.length; i++){
+      var tmp = fullArray[i];
+      var tmpCount = 0;
+
+      var fullArrayCount = fullArray.length;
+
+      for (var ii = 0; ii < fullArray.length; ii++){
+        if (tmp === fullArray[ii]){
+          tmpCount++;
+          if (tmpCount === usersArray.length){
+        //we keep this one
+          finalArray.push(fullArray[ii]);
+        //now remove from fullArray
+          }
+        }
+      }
+    }
+    console.log("finalArray", finalArray);
+
+    var theFinalArray = uniq(finalArray);
+
+    function uniq(passedInArray) {
+        return Array.from(new Set(passedInArray));
+    }
+    console.log("theFinalArray", theFinalArray)
+
+  </script>
+</head>
+<body>
+<h1>Ta Da</h1>
+</body>
+</html>

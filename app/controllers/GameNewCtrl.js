@@ -1,6 +1,8 @@
 "use strict";
 
 app.controller("GameNewCtrl", function($scope, GameStorage, $location) {
+  $scope.title = "Add Games";
+  $scope.btnText = "Save";
   $scope.game = {
     title: "",
     genre: null,

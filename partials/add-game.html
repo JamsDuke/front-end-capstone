@@ -1,4 +1,4 @@
-<h1>Add a Game</h1>
+<h1>{{title}}</h1>
   <form>
     <div class="form-group">
       <label>Game Title</label>
@@ -31,5 +31,8 @@
         <option value="8" name="">8</option>
       </select>
     </div>
-    <button class="btn btn-default" ng-click="addNewGame()">Add to List</button>
+    <div>
+      <textarea ng-model="game.description" name="textarea" placeholder="Useful Info About This Game" rows="10" cols="50">Game Info</textarea>
+    </div>
+    <button class="btn btn-default" ng-click="addNewGame()">{{btnText}}</button>
   </form>
