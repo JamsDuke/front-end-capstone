@@ -95,6 +95,7 @@ app.factory("PartyStorage", ($q, $http, FirebaseURL) => {
       });
     });
   };
+
   return {getParties, getSingleParty, editParty, postNewParty, deleteParty, getPartyGameList};
 });
 

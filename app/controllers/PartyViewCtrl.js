@@ -1,12 +1,11 @@
 "use strict";
-app.controller("PartyViewCtrl", function($scope, $routeParams, PartyStorage) {
+app.controller("PartyViewCtrl", function($scope, $routeParams, PartyStorage, $window) {
 $scope.partyMemberIds = [];
 $scope.partyGameList = [];
 $scope.games = [];
 $scope.finalGameList = [];
 $scope.finalArray = [];
 $scope.theFinalArray = [];
-
   // This is supposed to get the games of those in the party
   PartyStorage.getPartyGameList()
   .then((gamesArray) => {
@@ -38,7 +37,6 @@ $scope.theFinalArray = [];
           if($scope.games[iii].uid === tempId){
             $scope.partyGameList.push($scope.games[iii].title);
           }
-
             // Getting crazy with loops here
             // This is supposed to pull out one istance of each duplicate game
             for (var x = 0; x < $scope.partyGameList.length; x++){
@@ -59,25 +57,19 @@ $scope.theFinalArray = [];
               }
             }
             console.log("$scope.finalArray", $scope.finalArray);
-
             $scope.theFinalArray = uniq($scope.finalArray);
-
             console.log("$scope.theFinalArray", $scope.theFinalArray);
-
         }
-
-    // }
-    // for (i = 0; i < $scope.partyGameList.length; i++){
-    //   var tmpGame = $scope.partyGameList[i];
-    //   var countTimes = 0;
-    //   for (ii = 0; ii < )
-    // }
      console.log("$scope.partyGameList", $scope.partyGameList);
     }
     // console.log("$scope.partyMemberIds", $scope.partyMemberIds);
     // console.log("$scope.partyGameList", $scope.partyGameList);
   });
+  $scope.randomGame = function () {
+    var random = $scope.theFinalArray[Math.floor(Math.random() * $scope.theFinalArray.length)];
+    console.log("random button clicked");
+    $window.alert("Broseidon: God of the Brocean has decreed: You shall play " + random + " this eve");
+  };
   // Things to do!
   // Display usernames of party members
-  // Display a list of games that each member has in common
 });
