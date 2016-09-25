@@ -4,12 +4,20 @@ $scope.partyMemberIds = [];
 $scope.partyGameList = [];
 $scope.games = [];
 $scope.finalGameList = [];
+$scope.finalArray = [];
+$scope.theFinalArray = [];
+
   // This is supposed to get the games of those in the party
   PartyStorage.getPartyGameList()
   .then((gamesArray) => {
     $scope.games = gamesArray;
     console.log("gamesArray", gamesArray);
   });
+
+  function uniq(passedInArray) {
+    return Array.from(new Set(passedInArray));
+    // this needs to be above where its declared or var uniq = function()
+    }
   // Trying to get the party that was clicked on here
   PartyStorage.getSingleParty($routeParams.partyid)
   .then((partyObject) => {
@@ -33,18 +41,28 @@ $scope.finalGameList = [];
 
             // Getting crazy with loops here
             // This is supposed to pull out one istance of each duplicate game
-            // var tempGameList = $scope.games[iii].title;
-            // console.log("tempGameList", tempGameList);
-            // for(var x = 0; x < $scope.partyGameList.length; x++){
-            //   var isDuplicate = false;
-            //   if($scope.partyGameList[x] === tempGameList){
-            //     isDuplicate = true;
-            //   }
-            //   if(isDuplicate === false)
-            //     $scope.finalGameList.push($scope.partyGameList[x]);
-            //   // console.log("$scope.finalGameList", $scope.finalGameList);
-            //   // console.log("finalGameList", $scope.finalGameList);
-            // }
+            for (var x = 0; x < $scope.partyGameList.length; x++){
+              var tmp = $scope.partyGameList[x];
+              var tmpCount = 0;
+
+              var fullArrayCount = $scope.partyGameList.length;
+
+              for (var y = 0; y < $scope.partyGameList.length; y++){
+                if (tmp === $scope.partyGameList[y]){
+                  tmpCount++;
+                  if (tmpCount === $scope.partyMemberIds.length){
+                //we keep this one
+                  $scope.finalArray.push($scope.partyGameList[y]);
+                //now remove from $scope.partyGameList
+                  }
+                }
+              }
+            }
+            console.log("$scope.finalArray", $scope.finalArray);
+
+            $scope.theFinalArray = uniq($scope.finalArray);
+
+            console.log("$scope.theFinalArray", $scope.theFinalArray);
 
         }
 
