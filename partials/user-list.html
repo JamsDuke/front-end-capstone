@@ -1,5 +1,5 @@
 <h1>Make a Party</h1>
-  <div class="" ng-repeat="user in users">
+  <div class="" ng-repeat="user in users | orderBy:'-username':true">
     <div class="">{{user.username}}  <button class="btn" ng-click="addUserToParty(user)">Add to Party</button><button class="btn" ng-click="removeUserFromParty(user)">Remove From Party</button></div>
     <!-- I would like to have a toggle here for the button "in party/not in party" -->
     <div class=""></div>

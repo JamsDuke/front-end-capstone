@@ -1,5 +1,5 @@
 <h1>Game List</h1>
-  <div ng-repeat="game in games">
+  <div ng-repeat="game in games | orderBy:'-title':true">
     <div class="">
       <div class="">
 <!-- Stretch goal here. Be able to click on title for game description/notes -->

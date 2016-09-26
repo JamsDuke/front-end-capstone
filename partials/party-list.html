@@ -1,5 +1,5 @@
 <h1>Party List</h1><!-- 'Party List' Header -->
-  <div ng-repeat="party in parties">
+  <div ng-repeat="party in parties | orderBy:'-title':true">
     <div class=""><!-- party card wrapper -->
       <div class=""><!-- party card -->
         <button class="" ng-click="goToParty(party.id, party.title)" data-partyid="{{party.id}}">View Party</button>
