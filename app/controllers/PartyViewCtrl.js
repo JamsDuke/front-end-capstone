@@ -10,7 +10,7 @@ $scope.theFinalArray = [];
   PartyStorage.getPartyGameList()
   .then((gamesArray) => {
     $scope.games = gamesArray;
-    console.log("gamesArray", gamesArray);
+    // console.log("gamesArray", gamesArray);
   });
 
   function uniq(passedInArray) {
@@ -21,12 +21,12 @@ $scope.theFinalArray = [];
   PartyStorage.getSingleParty($routeParams.partyid)
   .then((partyObject) => {
     $scope.party = partyObject;
-    console.log("partyObject.members.length", partyObject.members.length);
+    // console.log("partyObject.members.length", partyObject.members.length);
     // this loop pulls out UID from the partyObject
     for(var i = 1; i < partyObject.members.length; i+=2){
       $scope.partyMemberIds.push(partyObject.members[i]);
     }
-    console.log("$scope.partyMemberIds.length", $scope.partyMemberIds.length);
+    // console.log("$scope.partyMemberIds.length", $scope.partyMemberIds.length);
     // this loop will pull out games in common with uids in the group
     for(var ii = 0; ii < $scope.partyMemberIds.length; ii++){
       var tempId = $scope.partyMemberIds[ii];
@@ -56,7 +56,7 @@ $scope.theFinalArray = [];
                 }
               }
             }
-            console.log("$scope.finalArray", $scope.finalArray);
+            // console.log("$scope.finalArray", $scope.finalArray);
             $scope.theFinalArray = uniq($scope.finalArray);
             console.log("$scope.theFinalArray", $scope.theFinalArray);
         }
@@ -68,7 +68,8 @@ $scope.theFinalArray = [];
   $scope.randomGame = function () {
     var random = $scope.theFinalArray[Math.floor(Math.random() * $scope.theFinalArray.length)];
     console.log("random button clicked");
-    $window.alert("Broseidon: God of the Brocean has decreed: You shall play " + random + " this eve");
+    swal({   title: "Sup, Brah?",   text: "Broseidon: God of the Brocean has decreed: You shall play " + random + " this eve",   imageUrl: "images/brofist.jpg" });
+    // $window.alert("Broseidon: God of the Brocean has decreed: You shall play " + random + " this eve");
   };
   // Things to do!
   // Display usernames of party members

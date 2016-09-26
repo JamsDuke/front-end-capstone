@@ -44,25 +44,4 @@ app.controller("PartyListCtrl", function($scope, $window, PartyStorage) {
   };
 });
 
-// "use strict";
-
-// app.controller("PartyListCtrl", function($scope, PartyStorage) {
-//   let user = $scope.$parent.getUser();
-
-//   PartyStorage.getParties(user)
-//   .then((partiesArray) => {
-//     $scope.parties = partiesArray;
-//   });
-
-//   $scope.partyDelete = (partyid) => {
-//     PartyStorage.deleteParty(partyid)
-//     .then( (response) => {
-//       PartyStorage.getPartyList(user)
-//       .then( (partiesArray) => {
-//         $scope.parties = partiesArray;
-//       });
-//     });
-//   };
-// });
-
 

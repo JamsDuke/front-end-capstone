@@ -12,7 +12,7 @@ app.controller("GameNewCtrl", function($scope, GameStorage, $location) {
   };
 
   $scope.addNewGame = function() {
-    console.log($scope.game);
+    // console.log($scope.game);
     GameStorage.postNewGame($scope.game)
     .then(function() {
       $location.url("/games/list");

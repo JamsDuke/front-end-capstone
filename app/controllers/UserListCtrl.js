@@ -8,15 +8,6 @@ app.controller("UserListCtrl", function($scope, $location, UserStorage) {
     $scope.users = usersArray;
     console.log("usersArray", usersArray);
   });
-
-// WIP: Need Add player to group function and remove player from group function
-
-  // $scope.addUserToParty = function(user) {
-  //   UserStorage.postUserToParty(user)
-  //   .then(function() {
-  //     $location.url("/party/current");
-  //   });
-  // };
 });
 
 // "use strict";
@@ -65,7 +56,4 @@ app.controller("UserListCtrl", function($scope, $location, UserStorage) {
 //   // };
 // });
 
-////////////////////////////////////////////////
-
-//Original code without Christina's fancy loop
 

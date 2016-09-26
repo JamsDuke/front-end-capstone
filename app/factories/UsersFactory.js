@@ -24,24 +24,5 @@ app.factory("UserStorage", ($q, $http, FirebaseURL) => {
       });
     });
   };
-  // Post newPartyMember to firebase in the "party" branch
-  // Currently vestigial
-
-  // let postUserToParty = function(newPartyMember) {
-  //   console.log("newPartyMember", newPartyMember);
-  //   return $q( (resolve, reject) => {
-  //     $http.post(`${FirebaseURL}party.json`,
-  //       angular.toJson(newPartyMember))
-  //     // use angular.toJason instead of JSON.stringify if dealing with data that has already been processed by
-  //     // angular.  Firebase doesnt like data that has been touched by angular.
-  //       .success( (objFromFirebase) => {
-  //         resolve(objFromFirebase);
-  //       })
-  //       .error( (error) => {
-  //         reject(error);
-  //       });
-  //   });
-  // };
-
-  return {getUserList};  //, postUserToParty
+  return {getUserList};
 });

@@ -3,7 +3,7 @@
     <div class="">{{user.username}}</div>
     <!-- <div class=""><button class="btn" >Remove From Party</button></div> -->
   </div>
-    <div class="partyGameCard" ng-repeat="game in theFinalArray">
+    <div class="partyGameCard" ng-repeat="game in theFinalArray | orderBy:'-title':true">
       <div class="">
         <div class="">
     <!-- Stretch goal here. Be able to click on title for game description/notes -->
