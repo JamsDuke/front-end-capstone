@@ -1,7 +1,17 @@
 h2 {
-  color: blue; }
+  color: blue;
+}
 
 .partyGameCard {
-  border: 1px solid black; }
+  border: 1px solid black;
+}
+
+.gameForm {
+  border: 3px solid black;
+}
+
+.logoutBtn {
+  margin-top: 8px
+}
 
 /*# sourceMappingURL=main.css.map */
