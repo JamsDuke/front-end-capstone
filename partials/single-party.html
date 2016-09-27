@@ -3,14 +3,14 @@
     <div class="">{{user.username}}</div>
     <!-- <div class=""><button class="btn" >Remove From Party</button></div> -->
   </div>
-    <div class="partyGameCard" ng-repeat="game in theFinalArray | orderBy:'-title':true">
+    <div class="partyGameCard" ng-repeat="game in theFinalArray | orderBy:'-title': true">
       <div class="">
         <div class="">
     <!-- Stretch goal here. Be able to click on title for game description/notes -->
     <!-- Game information from users in group populates here -->
-          <div class="">{{game}}</div> <!-- ng-href="#" -->
-          <!-- <div class="">{{game.genre}}</div>
-          <div class="">{{game.coopCount}} Player Co-op</div> -->
+          <div class="">{{game.title}}</div> <!-- ng-href="#" -->
+          <div class="">{{game.genre}}</div>
+          <div class="">{{game.coopCount}} Player Co-op</div>
           <!-- <div class=""><button class="btn" >Edit</button></div>   --><!-- ng-click="" -->
         </div>
       </div>

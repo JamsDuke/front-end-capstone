@@ -1,16 +1,12 @@
 <h1>Bro Night</h1>
-<nav class="navbar navbar-default" ng-controller="NavCtrl">
-  <div class="">
-    <div>
-      <ul class="">
-        <li ng-show="!$parent.isLoggedIn"><a ng-href="#/login">Login</a></li>
-        <li ng-show="!$parent.isLoggedIn"><a ng-href="#/register">Register</a></li>
-        <li ng-show="$parent.isLoggedIn"><a ng-href="#/games/list">Game List</a></li>
-        <li ng-show="$parent.isLoggedIn"><a ng-href="#/games/new">Add Games</a></li>
-        <li ng-show="$parent.isLoggedIn"><a ng-href="#/party/new">Create Party</a></li>
-        <li ng-show="$parent.isLoggedIn"><a ng-href="#/party/list">Party List</a></li>
-        <li ng-show="$parent.isLoggedIn"><button ng-click="logout()">Logout</button></li>
-      </ul>
-    </div>
-  </div>
+<nav class="navbar navbar-dark bg-primary" ng-controller="NavCtrl">
+  <ul class="nav navbar-nav">
+    <li class="nav-item active" ng-show="!$parent.isLoggedIn"><a class="nav-link" ng-href="#/login">Login</a></li>
+    <li class="nav-item" ng-show="!$parent.isLoggedIn"><a class="nav-link" ng-href="#/register">Register</a></li>
+    <li class="nav-item" ng-show="$parent.isLoggedIn"><a class="nav-link" ng-href="#/games/list">Game List</a></li>
+    <li class="nav-item" ng-show="$parent.isLoggedIn"><a class="nav-link" ng-href="#/games/new">Add Games</a></li>
+    <li class="nav-item" ng-show="$parent.isLoggedIn"><a class="nav-link" ng-href="#/party/new">Create Party</a></li>
+    <li class="nav-item" ng-show="$parent.isLoggedIn"><a class="nav-link" ng-href="#/party/list">Party List</a></li>
+    <li ng-show="$parent.isLoggedIn"><button ng-click="logout()">Logout</button></li>
+  </ul>
 </nav>
