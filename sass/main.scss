@@ -1,11 +1,40 @@
-h1 {
-  color: blue;
-}
-
 h2 {
   color: blue;
 }
 
-.partyGameCard {
-  border: 1px solid black;
+.logoutBtn {
+  margin-top: 6px
 }
+
+.gameList,
+.gameForm,
+.partyCreate {
+  border: 3px solid black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.loginRegister {
+  margin: 5px;
+}
+
+.gameCard,
+.partyCard,
+.usersList {
+  border: 3px solid black;
+  border-radius: 5px;
+  margin: 5px;
+  padding: 3px;
+}
+
+.editBtn {
+  color: white;
+}
+
+.userCard {
+  margin: 5px;
+  text-align: right;
+}
+
+/*# sourceMappingURL=main.css.map */

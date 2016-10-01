@@ -1,6 +1,6 @@
 "use strict";
 
-app.controller("GameListCtrl", function($scope, GameStorage) {
+app.controller("GameListCtrl", function($scope, GameStorage, $window) {
   let user = $scope.$parent.getUser();
 
   GameStorage.getGameList(user)
@@ -17,4 +17,8 @@ app.controller("GameListCtrl", function($scope, GameStorage) {
       });
     });
   };
+// Function in progress
+  // $scope.goToGame = function (gameId) {
+  //   $window.location.href = `/games/{{game.id}}/edit`;
+  // };
 });

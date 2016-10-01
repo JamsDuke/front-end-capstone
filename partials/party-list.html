@@ -1,31 +1,16 @@
-<h1>Party List</h1><!-- 'Party List' Header -->
-  <div ng-repeat="party in parties | orderBy:'-title':true">
-    <div class=""><!-- party card wrapper -->
-      <div class=""><!-- party card -->
-        <button class="" ng-click="goToParty(party.id, party.title)" data-partyid="{{party.id}}">View Party</button>
-        <div class="">
-          <div>{{party.title}}</div>
-          <div class="">{{party.description}}</div>
-          <div class="">
-            <button class="btn btn-danger" ng-click="partyDelete(party.id)">Delete</button>
-            <!-- <button class="btn btn-danger" ng-click="partyEdit(party.id)"><i class="">Edit</i></button> -->
-          </div>
-        </div><!-- end card bottom wrapper -->
-      </div><!-- end party card -->
-    </div><!-- end party card wrapper -->
-  </div>
-</div><!-- end row wrapper -->
-
-
-
-<!-- <h1>Party List</h1>
-  <div ng-repeat="party in parties">
-    <div class="">
+<div class="container">
+  <h1>Party List</h1>
+    <div ng-repeat="party in parties | orderBy:'-title':true">
       <div class="">
-        <div class="">{{party.title}}</div>
-        <div class="">{{party.description}}</div>
-        <div><button class="btn" ng-click="partyDelete(party.id)">Delete</button></div>
-        <div><button class="btn" ng-click="goToParty(party.id)">View Party</button></div>
+        <div class="partyCard col-xs-6">
+            <div><h3>{{party.title}}</h3></div>
+            <div class="">{{party.description}}</div>
+            <div class="">
+              <button class="btn btn-success" ng-click="goToParty(party.id, party.title)" data-partyid="{{party.id}}">View Party</button>
+              <button class="btn btn-danger" ng-click="partyDelete(party.id)">Delete</button>
+            </div>
+        </div>
       </div>
     </div>
-  </div> -->
+  </div>
+</div>

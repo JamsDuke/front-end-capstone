@@ -1,5 +1,6 @@
+<div class="container">
 <h1>{{title}}</h1>
-  <form class="gameForm col-xs-6">
+  <form class="gameForm col-xs-6 form-horizontal">
     <div class="form-group">
       <label>Game Title</label>
       <input type="text" class="" placeholder="Game Title" ng-model="game.title" />
@@ -34,6 +35,7 @@
     <div>
       <textarea ng-model="game.description" name="textarea" placeholder="Useful Info About This Game" rows="10" cols="50">Game Info</textarea>
     </div>
-    <button class="btn btn-default" ng-click="addNewGame()">{{btnText}}</button>
+    <button class="btn btn-primary" ng-click="addNewGame()">{{btnText}}</button>
   </form>
+</div>
 

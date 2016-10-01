@@ -1,23 +1,15 @@
-<h2>{{currentPartyTitle}}</h2>
-  <div ng-repeat="user in members.username"> <!-- Party Members here | ng repeat="user in party?"-->
-    <div class="">{{user.username}}</div>
-    <!-- <div class=""><button class="btn" >Remove From Party</button></div> -->
-  </div>
-    <div class="partyGameCard" ng-repeat="game in theFinalArray | orderBy:'-title': true">
-      <div class="">
+<div class="container">
+  <h1>{{currentPartyTitle}}</h1>
+    <div ng-repeat="user in members.username">
+      <div class="">{{user.username}}</div>
+    </div>
+      <div class="" ng-repeat="game in theFinalArray | orderBy:'-title': true">
         <div class="">
-    <!-- Stretch goal here. Be able to click on title for game description/notes -->
-    <!-- Game information from users in group populates here -->
-          <div class="">{{game.title}}</div> <!-- ng-href="#" -->
-          <div class="">{{game.genre}}</div>
-          <div class="">{{game.coopCount}} Player Co-op</div>
-          <!-- <div class=""><button class="btn" >Edit</button></div>   --><!-- ng-click="" -->
+          <div class="">
+      <!-- Game information from users in group populates here -->
+            <div class="gameCard">{{game.title}} | Genre: {{game.genre}} | {{game.coopCount}} Player Co-op</div>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div><button class="btn" ng-click="randomGame()">Random Game</button></div>
-
-
-    <!-- Broseidon: God of the Brocean has decreed:
-          You shall play {{Random Game}} this eve -->
+      <div><button class="btn btn-primary" ng-click="randomGame()">Random Game</button></div>
+</div>

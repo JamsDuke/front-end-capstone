@@ -1,20 +1,23 @@
-<h1>Create a Party</h1>
-<form>
-  <div class="form-group">
-    <label><h5>Party Name:</h5></label>
-    <input type="text" class="form-control" placeholder="" ng-model="newParty.title" />
-  </div>
-  <div class="form-group">
-    <label><h5>Party Description</h5></label>
-    <input type="text" class="form-control" ng-model="newParty.description" />
-  </div>
-  <div ng-controller="UserListCtrl">
-    <h2>Available Users</h2>
-      <div class="" ng-repeat="user in users  | orderBy:'-username':true">
-        <div class="">{{user.username}}  <button class="btn" ng-click="$parent.addUserToParty(user)">Add to Party</button><!-- <button class="btn" ng-click="$parent.removeUserFromParty(user)">Remove From Party</button></div> -->
-        <!-- ng-if="!isInParty" -->
-        <div class=""></div>
-      </div>
-  </div>
-  <button class="" ng-click="addNewParty()">Save Party</button>
-</form>
+<div class="container">
+  <h1>Create a Party</h1>
+  <form class="col-xs-6 partyCreate">
+    <div class="form-group">
+      <label><h5>Party Name:</h5></label>
+      <input type="text" class="" placeholder="" ng-model="newParty.title" />
+    </div>
+    <div class="form-group">
+      <label><h5>Party Description</h5></label>
+      <input type="text" class="" ng-model="newParty.description" />
+    </div>
+    <div ng-controller="UserListCtrl">
+      <h2>Available Users</h2>
+        <div class="usersList">
+          <div class="userCard" ng-repeat="user in users  | orderBy:'-username':true">
+            <div>{{user.username}}  <button class="btn btn-success" data-toggle="button" ng-click="$parent.addUserToParty(user)">Add to Party</button><!-- <button class="btn" ng-click="$parent.removeUserFromParty(user)">Remove From Party</button></div> -->
+            <!-- ng-if="!isInParty" -->
+          </div>
+          </div>
+        </div>
+    <button class="btn btn-primary" ng-click="addNewParty()">Save Party</button>
+  </form>
+</div>
