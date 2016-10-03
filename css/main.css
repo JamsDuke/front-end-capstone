@@ -4,11 +4,14 @@ h2 {
 .logoutBtn {
   margin-top: 6px; }
 
-.gameList,
-.gameForm,
-.partyCreate {
+.gameForm {
   border: 3px solid black;
   text-align: center;
+  border-radius: 5px;
+  padding: 3px; }
+
+.partyCreate {
+  border: 3px solid black;
   border-radius: 5px;
   padding: 3px; }
 
@@ -18,7 +21,7 @@ h2 {
 .gameCard,
 .partyCard,
 .usersList {
-  border: 3px solid black;
+  border: 2px solid black;
   border-radius: 5px;
   margin: 5px;
   padding: 3px; }
@@ -27,11 +30,16 @@ h2 {
   color: white; }
 
 .userCard {
-  margin: 5px;
+  margin: 5px; }
+
+.usersList {
   text-align: right; }
 
 .decisionWrap {
   text-align: center; }
+
+.addGameBtn {
+  margin: 3px; }
 
 /*# sourceMappingURL=main.css.map */
 

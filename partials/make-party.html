@@ -12,12 +12,13 @@
     <div ng-controller="UserListCtrl">
       <h2>Available Users</h2>
         <input class="form-control" type="text" placeholder="Search users" ng-model="searchText">
-        <div class="usersList">
+        <div class="col-sm-3"></div>
+        <div class="usersList col-sm-6">
           <div class="userCard" ng-repeat="user in users  | orderBy:'-username':true | filter: searchText">
-            <div>{{user.username}}  <button class="btn btn-success" data-toggle="button" ng-click="$parent.addUserToParty(user)">Add to Party</button>
-          </div>
+            <div>{{user.username}}  <button class="btn btn-success userBtn" data-toggle="button" ng-click="$parent.addUserToParty(user)">Add to Party</button>
+            </div>
           </div>
         </div>
-    <button class="btn btn-primary" ng-click="addNewParty()">Save Party</button>
+    <button class="btn btn-primary btn-lg btn-block" ng-click="addNewParty()">Save Party</button>
   </form>
 </div>
