@@ -32,8 +32,9 @@
         <option value="8" name="">8</option>
       </select>
     </div>
-    <div>
-      <textarea ng-model="game.description" name="textarea" placeholder="Useful Info About This Game" rows="10" cols="50">Game Info</textarea>
+    <div class="">
+      <label>Game Notes</label>
+      <textarea class="form-control" ng-model="game.description" name="textarea" placeholder="Useful Info About This Game" rows="3">Game Info</textarea>
     </div>
     <button class="btn btn-primary" ng-click="addNewGame()">{{btnText}}</button>
   </form>

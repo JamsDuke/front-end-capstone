@@ -1,12 +1,11 @@
 <div class="container">
   <h1>Game List</h1>
-  <div class="">
-    <div class="gameCard col-xs-6" ng-repeat="game in games | orderBy:'-title':true">
+  <input class="col-xs-6" type="text" placeholder="Search games" ng-model="searchText">
+    <div class="gameCard col-xs-6" ng-repeat="game in games | orderBy:'-title':true | filter: searchText">
       <div class="">{{game.title}} | Genre: {{game.genre}} | {{game.coopCount}} Player Co-op</div>
       <div>
         <button class="btn btn-success btn-sm"><a class="editBtn" ng-href="#/games/{{game.id}}/edit">Edit</a></button>
         <button class="btn btn-danger btn-sm" ng-click="gameDelete(game.id)">Delete</button>
       </div>
     </div>
-  </div>
 </div>
