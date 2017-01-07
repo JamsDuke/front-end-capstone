@@ -34,37 +34,16 @@ $scope.theFinalArray = [];
           // console.log("$scope.games[iii].uid", $scope.games[iii].uid);
           // console.log("tempId", tempId);
           // console.log("WHAT IS THIS", $scope.games[iii]);
-          if($scope.games[iii].uid === tempId){
-            $scope.partyGameList.push($scope.games[iii]);
-          }
-            // Getting crazy with loops here
-            // This is supposed to pull out one istance of each duplicate game
-            for (var x = 0; x < $scope.partyGameList.length; x++){
-              var tmp = $scope.partyGameList[x].title;
-              var tmpCount = 0;
+          $scope.partyGameList.push($scope.games[iii].id);
 
-              var fullArrayCount = $scope.partyGameList.length;
-
-              for (var y = 0; y < $scope.partyGameList.length; y++){
-                if (tmp === $scope.partyGameList[y].title){
-                  tmpCount++;
-                  if (tmpCount === $scope.partyMemberIds.length){
-                //we keep this one
-                  $scope.finalArray.push($scope.partyGameList[y]);
-                //now remove from $scope.partyGameList
-                  }
-                }
-              }
-            }
-            // console.log("$scope.finalArray", $scope.finalArray);
-            $scope.theFinalArray = uniq($scope.finalArray);
-            console.log("$scope.theFinalArray", $scope.theFinalArray.sort());
-        }
-     console.log("$scope.partyGameList", $scope.partyGameList);
+     // console.log("$scope.partyGameList", $scope.partyGameList);
     }
     // console.log("$scope.partyMemberIds", $scope.partyMemberIds);
-    // console.log("$scope.partyGameList", $scope.partyGameList);
-  });
+  }
+    console.log("$scope.partyGameList", $scope.partyGameList);
+    $scope.theFinalArray = uniq($scope.partyGameList);
+    console.log("$scope.theFinalArray", $scope.theFinalArray);
+});
   $scope.randomGame = function () {
     var random = $scope.theFinalArray[Math.floor(Math.random() * $scope.theFinalArray.length)];
     console.log("random button clicked");
